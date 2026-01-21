@@ -1,0 +1,47 @@
+1. Waarom deze Data Variabelen?
+
+    Waarom Resigned (Vertrokken)?
+
+        Antwoord: "Dit is de allerbelangrijkste 'outcome' variabele voor HR. Het kost klauwen met geld als mensen vertrekken. We willen weten: kunnen we dit voorspellen?"
+
+    Waarom Employee_Satisfaction_Score?
+
+        Antwoord: "Dit is een 'leading indicator'. Vaak daalt tevredenheid voordat iemand vertrekt. Ik wilde zien of werkdruk hier invloed op had."
+
+    Waarom Monthly_Salary & Work_Hours?
+
+        Antwoord: "Dit zijn de 'knoppen' waar management aan kan draaien. Als bleek dat laag salaris leidt tot vertrek, hadden we een simpele oplossing (salaris omhoog). We moesten dit dus testen."
+
+2. Waarom deze Grafieken?
+
+A. De Boxplot (die rechthoeken met streepjes)
+
+    Gebruikt bij: Salaris per afdeling & Vertrek-analyse.
+
+    Waarom: "Een gemiddelde zegt niks. Als ik zeg 'het gemiddelde salaris is €5000', kan dat betekenen dat iedereen €5000 verdient, of de helft €1000 en de helft €9000. Een boxplot laat de spreiding zien en de uitchieters. Hiermee kon ik aan management laten zien dat de salarisschalen per afdeling heel consistent zijn."
+
+B. De Scatterplot met Regressielijn (die puntenwolk met rode streep)
+
+    Gebruikt bij: Werkuren vs. Tevredenheid.
+
+    Waarom: "Ik zocht naar een verband (correlatie). Als je meer werkt, word je dan ongelukkiger? Deze grafiek bewijst visueel van niet. De lijn is plat. Dit is een heel sterk bewijs om tegen een manager te zeggen: 'Minder uren werken gaat de tevredenheid niet automatsch verhogen'."
+
+C. Feature Importance Barplot (De horizontale balken)
+
+    Gebruikt bij: Machine Learning modellen.
+
+    Waarom: "Machine Learning is vaak een 'black box'. Deze grafiek maakt het transparant. Het toont precies welke variabele de grootste invloed heeft op de uitkomst. Voor management is dit cruciaal: het vertelt hen waar ze op moeten focussen (in ons geval: Training en Tevredenheid, niet op Overuren)."
+
+D. Confusion Matrix (Dat vierkant met 4 vlakken)
+
+    Gebruikt bij: Voorspellen van vertrek.
+
+    Waarom: "Om eerlijk te zijn over de kwaliteit van het model. Een 'Accuracy' percentage kan misleidend zijn. Deze matrix laat zien hoeveel vertrekkers we écht hebben betrapt. In ons geval zagen we dat we veel vertrekkers misten. Dit is academisch heel sterk: je toont aan dat je kritisch bent op je eigen model."
+
+3. De Kernboodschap van je Analyse (De "So What?")
+
+Als je vastloopt, val terug op dit verhaal:
+
+    "Meneer/Mevrouw, ik heb gezocht naar harde oorzaken voor vertrek en ontevredenheid, zoals te veel werk of te weinig loon. Uit mijn ML-analyse en visualisaties blijkt dat deze geen invloed hebben. De data is 'schoon' en het beleid lijkt eerlijk.
+
+    Mijn conclusie is daarom niet dat we salarissen moeten aanpassen, maar dat we data missen over de 'zachte kant': managementstijl, cultuur of privésituaties. De 'harde' HR-data verklaart het vertrek niet."
