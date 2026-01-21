@@ -190,4 +190,35 @@ plt.tight_layout()
 plt.savefig('6_Diepte_Analyse_Density.png')
 plt.close()
 
+# ==========================================
+# EXTRA SLIDE: VERLOOP PER AFDELING
+# ==========================================
+print("Genereren: Extra_Verloop_per_Afdeling.png")
+plt.figure(figsize=(10, 6))
+
+# 1. Data berekenen
+attrition_per_dept = df.groupby('Department')['Resigned'].mean().sort_values(ascending=False) * 100
+
+# 2. Kleuren: We gebruiken één basiskleur omdat er geen enorme uitschieters zijn.
+# We geven de top 3 een iets donkerdere tint om de nuance te tonen.
+colors = ['#34495e' if i < 3 else '#95a5a6' for i in range(len(attrition_per_dept))]
+
+# 3. Plotten
+ax = sns.barplot(x=attrition_per_dept.values, y=attrition_per_dept.index, palette=colors)
+
+# 4. Styling
+plt.title('Verloop is Bedrijfsbreed (Systemisch Probleem)', fontsize=16, fontweight='bold')
+plt.xlabel('Verlooppercentage (%)', fontsize=12)
+
+# Inzoomen op de relevante range om de kleine verschillen te tonen
+plt.xlim(8, 11.5)
+
+# Percentages toevoegen
+for i, v in enumerate(attrition_per_dept.values):
+    ax.text(v + 0.05, i, f"{v:.1f}%", va='center', fontweight='bold', color='black')
+
+plt.tight_layout()
+plt.savefig('Extra_Verloop_per_Afdeling.png')
+plt.close()
+
 print("Klaar! Alle 6 afbeeldingen zijn gegenereerd.")
